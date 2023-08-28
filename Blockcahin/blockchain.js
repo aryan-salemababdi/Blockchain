@@ -29,6 +29,26 @@ static isValidChain(chain){
 
     return true;
   }
+
+  replaceChain(chain){
+
+    if(chain.length <= this.chain.length){
+      console.error("the incoming chain must be longer");
+     return;
+    }
+    else if(!Blockchain.isValidChain(chain)){
+
+      console.error("the incoming chain must be valid");
+      return;
+
+    }
+
+    else{
+      console.log(`replace chain with: ${chain}`);
+    this.chain = chain;
+    }
+  }
+  
 }
 
 module.exports = Blockchain;
